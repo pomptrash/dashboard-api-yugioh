@@ -17,11 +17,11 @@ df_filtered_columns = df[['name', 'type', 'atk', 'def', 'desc']]
 df_default_types =  df_filtered_columns[df_filtered_columns['type'].isin(['Effect Monster', 'Spell Card', 'Trap Card', 'Normal Monster', 'Fusion Monster', 'Skill Card'])]
 
 st.title('Dashboard API YuGiOh')
-filter_option = st.selectbox('Escolha uma opção', ['---', 'Mostrar tudo', 'Filtrar por tipo'])
+filter_option = st.selectbox('Escolha uma opção', ['---', 'Mostrar tudo', 'Visualizar gráfico de tipos de cartas'])
 
 if filter_option == 'Mostrar tudo':
     st.dataframe(df_filtered_columns, hide_index=True)
-elif filter_option == 'Filtrar por tipo':
+elif filter_option == 'Visualizar gráfico de tipos de cartas':
     # CHECKBOX PARA SELECIONAR TODOS OS TIPOS NO MULTISELECT
     select_all = st.sidebar.checkbox('Selecionar todos', False)
     if select_all:
